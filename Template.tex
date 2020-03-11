@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt,notitlepage]{article}
+
+% package references
+\usepackage{xcolor}
+\usepackage{listings}
+    \definecolor{HLgreen}{RGB}{0,153,0}
+    \definecolor{HLred}{RGB}{153,0,0}
+    \definecolor{HLblue}{RGB}{0,0,153}
+    \definecolor{HLgrey}{RGB}{153,153,153}
+    \lstdefinelanguage{DSA-pseudo}{
+    % description text
+    classoffset = 1,
+    morekeywords = {Algorithm, Input, Output},
+    keywordstyle = \bfseries,
+    % flow control
+    classoffset = 2,
+    morekeywords = {if, then, else, endif, for, endfor, while, endwhile, do, until, switch, case, to},
+    keywordstyle = \color{HLgreen},
+    % structure control
+    classoffset = 3,
+    morekeywords = {return, continue, break},
+    keywordstyle = \color{HLred},
+    % constants
+    classoffset = 4,
+    morekeywords = {true, false},
+    keywordstyle = \color{HLblue}
+    }
+\usepackage{amsfonts}
+\usepackage{fontspec}
+    \newfontfamily{\consolas}{Consolas}
+\usepackage{amsmath}
+
+% document settings
+\lstnewenvironment{dsap}{
+    \lstset{
+        language=DSA-pseudo,
+        columns=fullflexible,
+        basicstyle=\small\consolas,
+        morecomment=[l][\color{HLgrey}\footnotesize]{//}
+    }
+    \linespread{1}
+}{
+    \linespread{1.2}
+}
+\setlength{\parskip}{12pt}
+\setlength{\parindent}{0pt}
+\setlength{\lineskip}{3pt}
+
+% document content
+\begin{document}
+\title{Coursework Title} % change this
+\author{Name, Reg No.} % and this
+\date{} % when need
+\maketitle
+\linespread{1.2}
+% ------------Start from here-------------
+\section{Q1}
+    a) ~Plain Text, \emph{emphasized text} \textbf{bold text}.
+
+    b) ~A math equation: $6n^2+n+2$
+    \begin{center}
+        \begin{tabular}{l|l}
+            Table left        & Table right \\
+            \hline
+            A                 & B           \\
+            C                 & D           \\
+        \end{tabular}        
+    \end{center}
+
+    c) ~Multi-line math:
+    \begin{gather*}
+        n^2\geq n\geq 1, \\
+        2n^2\geq 2n\geq 2
+    \end{gather*} 
+    
+    d) ~Custom lstlisting language DSA-pseudo
+    \begin{dsap}
+        Algorithm add(a, b)
+        Input: you know
+        Output: you know
+
+            // highlight keywords example
+            if else then while for to endif endwhile
+            true false continue break switch case
+            return a + b
+    \end{dsap}
+
+\section{Q2}
+    Another section
+\end{document}
